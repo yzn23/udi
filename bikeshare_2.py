@@ -187,6 +187,7 @@ def user_stats(df,city):
      print('Earliest Year is:', er_year)
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
+#clean data
 def cleen(df):
     ch_col = input("do you want filter the columns (YES or NO): ").lower()
     if ch_col != 'no':
