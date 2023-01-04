@@ -187,7 +187,18 @@ def user_stats(df,city):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
 
-
+def cleen(df):
+    ch_col = input("do you want filter the columns (YES or NO): ").lower()
+    if ch_col != 'no':
+        col = int(input('How many columns do you want to display (YES or NO): '))
+        print(df.head(col))
+    else:
+        if ch_col != 'yes' or 'no':
+            print('enter (yes) or (no)')
+    dro = input("do you want drop NaN value (YES or NO): ").lower()
+    if dro != "no":
+        red = int(input("enter the condition for drop NaN value (how many Nan value in the row): "))
+        df.dropna(thresh=red)
 def main():
     while True:
         city, month, day = get_filters()
